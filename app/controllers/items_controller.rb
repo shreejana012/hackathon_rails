@@ -1,7 +1,11 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create,:edit]
   def index
-    @item = Item.all
+    if params[:search]
+      @item = Item.search(params[:search])
+    else
+      @item = Item.all.where(approve: true)
+    end
   end
 
   def new
