@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AuctionSite</title>
+    <title>ArtWebsite</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -9,18 +9,66 @@
   </head>
 
   <body>
+<div id = "warp">
   <div class = "container-fluid">
-    </nav>
+    <nav class="navbar navbar-default">
+      <div class="navbar-header">
+        <%= link_to 'AuctionSite', root_path, class: "navbar-brand"  %>
+        <!-- <a class="navbar-brand" href= '#{root_path}'>AuctionSite</a> -->
+      </div>
+      <ul class="nav navbar-nav">
+        <% if user_signed_in? %>
+          <li class="active"><%= link_to 'Explore',items_path %></li>
+          <li><%= link_to 'Log Out',destroy_user_session_path, method: :delete %></li>
+          <% else %>
+          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <li><%= link_to 'Log In', new_user_session_path %></li>
+        <% end %>
+      </ul>
+    <form class="navbar-form navbar-left">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search">
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+    <ul class="nav navbar-nav navbar-right email">
       <% if user_signed_in? %>
-        <%= current_user.email %>
-        <%= link_to 'My Account |',items_path %>
-        <%= link_to 'Log Out',destroy_user_session_path, method: :delete %>
-        <% else %>
-        <%= link_to 'Sign Up |', new_user_registration_path %>
-        <%= link_to 'Log In', new_user_session_path %>
+          <li><%= current_user.email %></li>
       <% end %>
-    </nav>
+    </ul>
+  </nav>
     <%= yield %>
   </div>
-  </body>
+  <div id = "footer">
+    <footer class= "footer text-center">
+     <div class="container">
+      <div class = "row">
+        <div class = "col-xs-12 col-md-4">
+          <h4>Contact</h4>
+          <a href ="https://cryptic-escarpment-85126.herokuapp.com/">Artwebsite</a><br />
+            <p>Kathmandu, Nepal</p>
+            <p>Tel- 014366128</p>
+          </div>
+          <div class = "col-xs-12 col-md-4">
+            <h4>Find Us</h4>
+            <div style = "font-size: 40px;">
+              <a href = "#"><i class="fa fa-facebook-official social" ></i></a>
+              <a href = "#"><i class="fa fa-twitter-square social" ></i></a>
+              <a href = "#"><i class="fa fa-linkedin-square social" ></i></a>
+            </div>
+          </div>
+          <div class = "col-xs-12 col-md-4">
+            <h4>© ArtWebsite</h4>
+            <p>All Rights Reserved</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+</body>
 </html>

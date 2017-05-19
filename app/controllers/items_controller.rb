@@ -1,6 +1,9 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create,:edit]
-
+  def index
+    @item = Item.all
+  end
+  
   def new
     @item = Item.new
   end
@@ -9,8 +12,8 @@ class ItemsController < ApplicationController
     @item = current_user.items.build(item_params)
     @item.save
     if @item.valid?
-      flash[:success] = "Yuur item has been successfully created and sent to the admin for verification"
-      redirect_to root_path
+      flash[:success] = "Your item has been successfully created and sent to the admin for verification"
+      redirect_to item_bids_path(@bid,item_id: @item.id)
     else
       render :new
     end
@@ -20,7 +23,8 @@ class ItemsController < ApplicationController
     @items = Item.find(parmas[:id])
   end
   def show
-    @items = Item.find(params[:id])
+    @item = Item.find(params[:id])
+    @bid = Bid.find_by_item_id(@item.id)
   end
   def update
     respond_to do |format|
@@ -48,6 +52,6 @@ class ItemsController < ApplicationController
       :description,
       :initial_price,
       :shipping_charges,
-      :photo)
+      :photo, bids_attributes: [:amount, :user_id, :item_id])
   end
 end
