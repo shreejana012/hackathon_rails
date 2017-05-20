@@ -1,33 +1,7 @@
-
-	<div class="panel">
-		<div class="panel panel-body">
-			<div class="text-center">
-				<div class="field inline">
-					<br><p><b>Tittle:</b></p>
-					<%= @item.title %><br />
-				</div>
-				<div>
-					<%= image_tag  @item.photo %><br />
-				</div>
-				<div class="field inline">
-					<br><p><b>Description:</b></p>
-					<%= @item.description%><br />
-				</div>
-				<div class="field inline">
-					<br><p><b>Painter:</b></p>
-					<%= @item.painter %><br />
-				</div>
-				<div class="field inline">
-					<br><p><b>Initial Price:</b></p>
-					<%= @item.initial_price %><br />
-				</div>
-				<div class="field inline">
-					<br><p><b>Shipping Charge:</b></p>
-					<%= @item.shipping_charges %><br />
-				</div>
-				<div class="field">
-					<br/><%= link_to "BID", new_item_bid_path(@item.id), class:'btn btn-default' %>
-				</div>
-			</div>
-		</div>
-	</div>
+<%= @item.title %><br />
+<%= image_tag  @item.photo %><br />
+<%= @item.description%><br />
+<%= @item.painter %><br />
+<%= @item.initial_price %><br />
+<%= @item.shipping_charges %><br />
+<%= link_to 'BID', new_item_bid_path(@item.id) %>

@@ -4,14 +4,14 @@
   <div class = "post-box">
     <div class = "col-md-4">
       <div class = "post-heading">
-        <h5><b>Title:</b></h5>
+        <h5>Title</h5>
           <%= i.title %>
       </div>
       <div class = "post-body">
         <%= image_tag i.photo, class: "image" %>
       </div>
       <div class = "post-footer">
-        <%= link_to 'Read More', item_path(i), class: 'btn btn-default' %>
+        <%= link_to 'Read More', item_path(i) %>
       </div>
     </div>
   </div>
