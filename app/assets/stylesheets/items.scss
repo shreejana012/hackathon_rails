@@ -9,4 +9,30 @@
   border-top: 6px solid #7e96b1;
   border-bottom: 6px solid #7e96b1;
 }
+.img{
+width: 1340px;
+height: 430px;
+}
+.email{
+  padding-top: 12px;
+  padding-right: 20px;
+}
+#footer{
+height: 120px;
+background-color: black;
+color: #ffffff;
+}
+#warp {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -80px;
+  padding: 0 0 120px;
+}
+.wrapper {
+    text-align: center;
+}
 
+.button {
+    position: absolute;
+    top: 50%;
+}

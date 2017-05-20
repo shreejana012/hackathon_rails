@@ -1,0 +1,7 @@
+<%= @item.title %><br />
+<%= image_tag  @item.photo %><br />
+<%= @item.description%><br />
+<%= @item.painter %><br />
+<%= @item.initial_price %><br />
+<%= @item.shipping_charges %><br />
+<%= link_to 'BID', new_item_bid_path(@item.id) %>

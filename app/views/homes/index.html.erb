@@ -1,19 +1,27 @@
-<h3>Paintings</h3>
-<div class="row">
-  <% @item.each do |i| %>
-  <div class = "post-box">
-    <div class = "col-md-4">
-      <div class = "post-heading">
-        <h5>Title</h5>
-          <%= i.title %>
-      </div>
-      <div class = "post-body">
-        <%= image_tag i.photo, class: "image" %>
-      </div>
-      <div class = "post-footer">
-        <%= link_to 'Read More', item_path(i) %>
-      </div>
-    </div>
+<h1 class= "text-center">SELL YOUR ART WITH ARTWEBSITE AND BID TO BUY IT</h1>
+<p class = "text-center">Join thousands of artists around us</p>
+<p class = "text-center">Buy awesome paintings bid for it and its yours </p>
+<div class = "hero">
+   <%= image_tag("test.jpg", alt: 'Pictures', class: "img") %>
+</div>
+
+<div class = "row">
+  <h3 class = "text-center"> Here's what joining ArtWeb today will do for you</h3>
+  <div class = "col-md-4">
+    <h3>Sell your artwork now</h3>
+    <p>It just takes a few minutes to upload your images and set up your personal gallery.</p>
   </div>
-  <% end %>
+  <div class = "col-md-4">
+    <h3>Bid to buy it</h3>
+    <p>Sign in to buy it and bid for it.</p>
+  </div>
+  <div class = "col-md-4">
+    <h3>No commision</h3>
+    <p>We don't charge you any comission for selling your artwork!</p>
+  </div>
+</div>
+<div class = "wrapper">
+  <div class = "col-md-12 button">
+    <a class= "btn btn-primary btn-xl active"href = "#">Start Now</a>
+  </div>
 </div>

@@ -1,0 +1,19 @@
+<h3>Paintings</h3>
+<div class="row">
+  <% @item.each do |i| %>
+  <div class = "post-box">
+    <div class = "col-md-4">
+      <div class = "post-heading">
+        <h5>Title</h5>
+          <%= i.title %>
+      </div>
+      <div class = "post-body">
+        <%= image_tag i.photo, class: "image" %>
+      </div>
+      <div class = "post-footer">
+        <%= link_to 'Read More', item_path(i) %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
