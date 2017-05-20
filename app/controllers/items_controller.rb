@@ -1,9 +1,13 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create,:edit]
   def index
-    @item = Item.all
+    if params[:search]
+      @item = Item.search(params[:search])
+    else
+      @item = Item.all.where(approve: true)
+    end
   end
-  
+
   def new
     @item = Item.new
   end
@@ -13,7 +17,7 @@ class ItemsController < ApplicationController
     @item.save
     if @item.valid?
       flash[:success] = "Your item has been successfully created and sent to the admin for verification"
-      redirect_to item_bids_path(@bid,item_id: @item.id)
+      redirect_to items_path(@bid,item_id: @item.id)
     else
       render :new
     end

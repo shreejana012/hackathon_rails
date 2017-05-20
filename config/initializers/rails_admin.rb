@@ -2,6 +2,14 @@ RailsAdmin.config do |config|
   config.authorize_with do
       redirect_to main_app.root_path unless current_user.admin == true
     end
+    config.model 'Item' do
+      include_all_fields
+      list do
+        field :approve do
+          visible true
+        end
+      end
+    end
   ### Popular gems integration
 
   ## == Devise ==
