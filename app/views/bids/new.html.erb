@@ -1,6 +1,12 @@
-<%= simple_form_for @bid, url: item_bids_path, method: :post do |f| %>
-  <%= f.input :amount, placeholder: 'Bid Amount', label: false %>
-  <%= f.input :user_id, as: :hidden %>
-  <%= f.input :item_id, as: :hidden %>
-  <%= f.submit "Submit" %>
-<% end %>
+<div class="col-md-4"></div>
+<div class="col-md-4">
+	<div class="text-center">
+		<%= simple_form_for @bid, url: item_bids_path, method: :post do |f| %>
+		  <%= f.input :amount, placeholder: 'Bid Amount', label: false %>
+		  <%= f.input :user_id, as: :hidden %>
+		  <%= f.input :item_id, as: :hidden %>
+		  <%= f.submit "Submit" %>
+		<% end %>
+	</div>
+</div>
+<div class="col-md-4"></div>
