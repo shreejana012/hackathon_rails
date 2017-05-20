@@ -1,13 +1,6 @@
-html {
-    position: relative;
-    min-height: 100%;
-}
-body{
-  margin: 0 0 120px;
-}
 .image{
   width: 350px;
-  height: 350px;
+  min-height: 350px;
   padding: 20px;
 	margin-bottom: 30px;
   border-radius: 4px;
@@ -28,14 +21,12 @@ height: 430px;
 height: 120px;
 background-color: black;
 color: #ffffff;
-position: absolute;
-left: 0; right: 0; buttom: 0;
 }
 #warp {
   min-height: 100%;
   height: auto;
-  position: relative;
-  margin-buttom: -120px;
+  margin: 0 auto -80px;
+  padding: 0 0 120px;
 }
 .wrapper {
     text-align: center;
@@ -44,10 +35,4 @@ left: 0; right: 0; buttom: 0;
 .button {
     position: absolute;
     top: 50%;
-}
-.post-footer{
-  text-align: center;
-}
-.panel{
-  padding: 15px;
 }
